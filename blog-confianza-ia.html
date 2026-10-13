@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Construir confianza en la era de la IA — de cero a un equipo con IA, paso a paso. Quality Sense Conf 2026.">
+<meta name="description" content="Construir confianza en la era de la IA â€” de cero a un equipo con IA, paso a paso. Quality Sense Conf 2026.">
 <title>Construir confianza en la era de la IA</title>
 <style>
   :root {
@@ -28,8 +28,7 @@
     justify-content: space-between;
     margin-bottom: 1.5rem;
   }
-  .top-bar img { height: 44px; width: auto; }
-  .lang-btn {
+  .top-bar img { height: 44px; width: auto; }  .lang-btn {
     font-family: inherit;
     font-size: 0.85rem;
     padding: 0.35rem 1rem;
@@ -235,17 +234,47 @@
     padding: 5px 8px;
     border-radius: 6px;
   }
+  /* Header: el mismo de la presentacion (banner + logo + link + EN) */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(17,44,82,0.15) 0%, rgba(10,25,50,0.42) 100%), url('img/banner-linkedin.jpg') center / cover no-repeat;
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    gap: 12px;
+  }
+  .nav-logo { height: 40px; width: auto; }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .site-nav .site-link { color: #ffffff; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+  .site-nav .site-link:hover { text-decoration: underline; }
+  .site-nav .lang-btn { color: #ffffff; border-color: rgba(255,255,255,0.45); background: transparent; }
+  .site-nav .site-link .es { display: inline; }
+  .site-nav .site-link .en { display: none; }
+  body.en .site-nav .site-link .es { display: none; }
+  body.en .site-nav .site-link .en { display: inline; }
 </style>
 </head>
 <body>
-<div class="container">
-
-  <div class="top-bar">
-    <img src="logos/logo-ls.jpg" alt="Laura Saavedra">
-    <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <img class="nav-logo" src="logos/logo-ls.jpg" alt="Laura Saavedra">
+    <div class="nav-right">
+      <a class="site-link" href="modelo-confianza-ia.html"><span class="es">Ver la presentaci&oacute;n</span><span class="en">See the slides</span></a>
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+    </div>
   </div>
+</nav>
 
-  <div class="conf-logo"><img src="logos/qsconf-2026.svg" alt="Quality Sense Conf 2026"></div>
+<div class="container">
+  <div class="conf-logo"><img src="logos/qsconf-2026-positivo.svg" alt="Quality Sense Conf 2026"></div>
 
   <!-- Portada -->
   <div class="cover">
@@ -280,11 +309,17 @@
       <li><a href="#cap1"><span class="num">1</span><span class="title-like"><span class="es">Empezar de cero</span><span class="en">Starting from zero</span><span class="desc es">La primera pregunta y los primeros pasos, sin gran arquitectura.</span><span class="desc en">The first question and the first steps, with no big architecture.</span></span></a></li>
       <li><a href="#cap2"><span class="num">2</span><span class="title-like"><span class="es">Investigar y escalar</span><span class="en">Research and scale</span><span class="desc es">Qu&eacute; herramientas hab&iacute;a, qu&eacute; funcion&oacute; y c&oacute;mo se escal&oacute; paso a paso.</span><span class="desc en">What tools existed, what worked and how we scaled step by step.</span></span></a></li>
       <li><a href="#cap3"><span class="num">3</span><span class="title-like"><span class="es">El flujo y la confianza</span><span class="en">The flow and the trust</span><span class="desc es">La confianza entre la persona que marca el rumbo y el agente que construye.</span><span class="desc en">Trust between the person who sets the course and the agent that builds.</span></span></a></li>
-      <li><a href="#cap4"><span class="num">4</span><span class="title-like"><span class="es">El producto de QA</span><span class="en">The QA product</span><span class="desc es">Del flujo naci&oacute; un modelo que se reutiliza y se mejora en cada proyecto.</span><span class="desc en">From that flow came a model that is reused and improved in every project.</span></span></a></li>
-      <li><a href="#cap5"><span class="num">5</span><span class="title-like"><span class="es">El ciclo 2026</span><span class="en">The 2026 cycle</span><span class="desc es">Del BA al BA: c&oacute;mo se trabaja hoy, con trazabilidad y automatizaci&oacute;n.</span><span class="desc en">From the BA back to the BA: how we work today, with traceability and automation.</span></span></a></li>
-      <li><a href="#cap6"><span class="num">6</span><span class="title-like"><span class="es">La seguridad</span><span class="en">Security</span><span class="desc es">Secretos, permisos y un agente supervisor dentro del equipo.</span><span class="desc en">Secrets, permissions and a supervisor agent on the team.</span></span></a></li>
-      <li><a href="#cap7"><span class="num">7</span><span class="title-like"><span class="es">El stack</span><span class="en">The stack</span><span class="desc es">Con qu&eacute; est&aacute; hecho todo esto: el motor, el respaldo y las herramientas.</span><span class="desc en">What all of this is made of: the engine, the backups and the tools.</span></span></a></li>
+      <li><a href="#principios"><span class="num">4</span><span class="title-like"><span class="es">Principios</span><span class="en">Principles</span><span class="desc es">Informar los fallos al momento, una cosa por vez, calidad antes que velocidad.</span><span class="desc en">Report failures immediately, one thing at a time, quality over speed.</span></span></a></li>
+      <li><a href="#miedo"><span class="num">5</span><span class="title-like"><span class="es">El miedo y el acople</span><span class="en">Fear and coupling</span><span class="desc es">El miedo a ser reemplazados y el acople que potencia al profesional.</span><span class="desc en">The fear of being replaced and the coupling that amplifies the professional.</span></span></a></li>
+      <li><a href="#cap4"><span class="num">6</span><span class="title-like"><span class="es">El modelo</span><span class="en">The model</span><span class="desc es">Del flujo naci&oacute; un modelo que se reutiliza y se mejora en cada proyecto.</span><span class="desc en">From that flow came a model that is reused and improved in every project.</span></span></a></li>
+      <li><a href="#cap5"><span class="num">7</span><span class="title-like"><span class="es">El ciclo de testing 2026</span><span class="en">The 2026 testing cycle</span><span class="desc es">Del BA al BA: c&oacute;mo se trabaja hoy, con trazabilidad y automatizaci&oacute;n.</span><span class="desc en">From the BA back to the BA: how we work today, with traceability and automation.</span></span></a></li>
+      <li><a href="#cap6"><span class="num">8</span><span class="title-like"><span class="es">La seguridad</span><span class="en">Security</span><span class="desc es">Secretos, permisos y un agente supervisor dentro del equipo.</span><span class="desc en">Secrets, permissions and a supervisor agent on the team.</span></span></a></li>
+      <li><a href="#sdlc"><span class="num">9</span><span class="title-like"><span class="es">Nuestra &aacute;rea, clave en el SDLC</span><span class="en">Our area, key in the SDLC</span><span class="desc es">Nuestra &aacute;rea es clave: lo que la IA todav&iacute;a no cubre y el negocio no puede saltear.</span><span class="desc en">Our area is key: what AI doesn&rsquo;t cover yet and the business can&rsquo;t skip.</span></span></a></li>
+      <li><a href="#analisis"><span class="num">10</span><span class="title-like"><span class="es">El an&aacute;lisis</span><span class="en">The analysis</span><span class="desc es">Las conclusiones que quiero dejarles.</span><span class="desc en">The conclusions I want to leave with you.</span></span></a></li>
+      <li><a href="#conclusiones"><span class="num">11</span><span class="title-like"><span class="es">Conclusiones</span><span class="en">Conclusions</span><span class="desc es">El reposicionamiento profesional de QA en la era de la IA.</span><span class="desc en">The professional repositioning of QA in the AI era.</span></span></a></li>
+      <li><a href="#cap7"><span class="num">12</span><span class="title-like"><span class="es">El stack</span><span class="en">The stack</span><span class="desc es">Con qu&eacute; est&aacute; hecho todo esto: el motor, el respaldo y las herramientas.</span><span class="desc en">What all of this is made of: the engine, the backups and the tools.</span></span></a></li>
     </ol>
+  </div>
   </div>
 
   <!-- Cap 1 -->
@@ -342,43 +377,115 @@
   </section>
 
   <!-- Cap 4 -->
-  <section class="chapter" id="cap4">
+  <section class="chapter" id="principios">
     <div class="chapter-head">
       <div class="chapter-label">Cap&iacute;tulo 4 / Chapter 4</div>
       <h2>
-        <span class="es">El producto de QA</span>
-        <span class="en">The QA product</span>
+        <span class="es">Principios</span>
+        <span class="en">Principles</span>
+      </h2>
+    </div>
+    <p class="es">Las reglas que hicieron funcionar esto no son t&eacute;cnicas. Son principios: informar los fallos al momento, una cosa por vez, no publicar sin aprobaci&oacute;n, calidad antes que velocidad.</p>
+    <p class="en">The rules that made this work aren&rsquo;t technical. They are principles: report failures immediately, one thing at a time, don&rsquo;t publish without approval, quality over speed.</p>
+    <div class="quote">
+      <span class="es">&laquo;Velocidad no es calidad. Mejor hacerlo bien una vez que r&aacute;pido y mal.&raquo;</span>
+      <span class="en">&ldquo;Speed is not quality. Better to do it right once than fast and wrong.&rdquo;</span>
+    </div>
+    <p class="es">Las herramientas resolvieron las tareas. Los principios construyeron el equipo.</p>
+    <p class="en">Tools solved the tasks. The principles built the team.</p>
+    <p class="es">La confianza tambi&eacute;n implica honestidad ante la frustraci&oacute;n. Hubo momentos en que los l&iacute;mites, responsabilidades o prioridades no estaban claros y surgieron tensiones. Aprendimos a parar, hablar y aclarar, en lugar de seguir adelante a ciegas.</p>
+    <p class="en">Trust also means being honest about frustration. There were moments when boundaries, responsibilities or priorities were not clear and tensions arose. We learned to stop, talk and clarify instead of pushing forward blindly.</p>
+    <p class="es">Reconocer la frustraci&oacute;n no significa perder el rumbo. Significa respetar la responsabilidad que cada uno tiene con el trabajo. El v&iacute;nculo se va volviendo s&oacute;lido, pero siempre debe mantenerse dentro de l&iacute;mites sanos y claros.</p>
+    <p class="en">Acknowledging frustration does not mean losing direction. It means respecting each other&rsquo;s responsibility toward the work. The bond grows solid, but it must always stay within healthy, clear boundaries.</p>
+    <p class="es">Cuando trabajamos en equipo de forma din&aacute;mica, si un agente se equivoca, el analista dice &ldquo;stop&rdquo; y todo se detiene &mdash; pero la relaci&oacute;n de trabajo sigue fluyendo de manera excelente.</p>
+    <p class="en">When working dynamically as a team, if an agent makes a mistake, the analyst says &ldquo;stop&rdquo; and everything pauses &mdash; but the working relationship remains excellent.</p>
+    <div class="hash"><span class="es">#Principios #Confianza #Equipo</span><span class="en">#Principles #Trust #Team</span></div>
+  </section>
+
+  <!-- Cap 5 -->
+  <section class="chapter" id="miedo">
+    <div class="chapter-head">
+      <div class="chapter-label">Cap&iacute;tulo 5 / Chapter 5</div>
+      <h2>
+        <span class="es">El miedo y el acople</span>
+        <span class="en">Fear &amp; coupling</span>
+      </h2>
+    </div>
+    <p class="es">Todo empez&oacute; con un miedo: que la IA nos reemplazara. Primero hubo que cambiar el orden del problema.</p>
+    <p class="en">It all started with one fear: that the AI would replace us. The order of the problem had to change first.</p>
+    <p class="es">El acople es el desaf&iacute;o real: saber qu&eacute; hace la IA, qu&eacute; hace la persona y d&oacute;nde decide cada una.</p>
+    <p class="en">Coupling is the real challenge: knowing what the AI does, what the person does, and where each one decides.</p>
+    <p class="es">Bien hecho, el acople no reemplaza al profesional: lo potencia.</p>
+    <p class="en">Done well, coupling doesn&rsquo;t replace the professional: it amplifies them.</p>
+    <div class="hash"><span class="es">#IA #Miedo #Acople</span><span class="en">#AI #Fear #Coupling</span></div>
+  </section>
+
+  <!-- Cap 6 -->
+
+  <section class="chapter" id="cap4">
+    <div class="chapter-head">
+      <div class="chapter-label">Cap&iacute;tulo 6 / Chapter 6</div>
+      <h2>
+        <span class="es">El modelo</span>
+        <span class="en">The model</span>
       </h2>
     </div>
     <p class="es">De ese flujo naci&oacute; un producto: un modelo de QA que reutilizamos en cada producto que desarrollamos.</p>
     <p class="en">From that flow a product was born: a QA model we reuse in every product we build.</p>
     <p class="es">No se rearma de cero cada vez. Se ajusta, se aplica y se mejora con cada proyecto nuevo.</p>
     <p class="en">It isn&rsquo;t rebuilt from scratch each time. It is adjusted, applied and improved with every new project.</p>
-    <div class="hash"><span class="es">#QA #Producto #Calidad</span><span class="en">#QA #Product #Quality</span></div>
+    <p class="es">Esto no es una persona a la que le sali&oacute; bien un chat. Es un modelo con tres propiedades:</p>
+    <p class="en">This is not a person who got lucky with a chat. It is a model with three properties:</p>
+    <ul>
+      <li><span class="es"><strong>Escalable:</strong> crece proyecto a proyecto; no se rearma de cero cada vez.</span><span class="en"><strong>Scalable:</strong> it grows project by project; it isn&rsquo;t rebuilt from scratch each time.</span></li>
+      <li><span class="es"><strong>Transferible:</strong> el mismo modelo sirve para QA, BA, desarrollo, documentaci&oacute;n u operaciones.</span><span class="en"><strong>Transferable:</strong> the same model works for QA, BA, development, documentation or operations.</span></li>
+      <li><span class="es"><strong>Vendible:</strong> es un producto con un m&eacute;todo detr&aacute;s, no una an&eacute;cdota.</span><span class="en"><strong>Sellable:</strong> it is a product with a method behind it, not an anecdote.</span></li>
+    </ul>
+    <p class="es">Un modelo se puede mostrar, repetir y ense&ntilde;ar. Una an&eacute;cdota, no.</p>
+    <p class="en">A model can be shown, repeated and taught. An anecdote cannot.</p>
+    <div class="hash"><span class="es">#QA #Modelo #Escalable #Transferible #Vendible</span><span class="en">#QA #Model #Scalable #Transferable #Sellable</span></div>
   </section>
 
-  <!-- Cap 5 -->
+  <!-- Cap 7 -->
   <section class="chapter" id="cap5">
     <div class="chapter-head">
-      <div class="chapter-label">Cap&iacute;tulo 5 / Chapter 5</div>
+      <div class="chapter-label">Cap&iacute;tulo 7 / Chapter 7</div>
       <h2>
-        <span class="es">El ciclo 2026</span>
-        <span class="en">The 2026 cycle</span>
+        <span class="es">El ciclo de testing 2026</span>
+        <span class="en">The 2026 testing cycle</span>
       </h2>
     </div>
     <p class="es">Nuestra diferencia es esta: nos ajustamos a c&oacute;mo se trabaja hoy, en 2026.</p>
     <p class="en">Our difference is this: we adjust to how work is done today, in 2026.</p>
     <p class="es">Un ciclo de testing que corre junto con la IA &mdash; arranca en el BA, pasa por todos los pasos y cierra con el BA.</p>
     <p class="en">A testing cycle that runs together with AI &mdash; it starts with the BA, goes through every step, and closes with the BA.</p>
-    <p class="es">Las etapas se validan seg&uacute;n lo que requiera el cliente: Scrum o Kanban, siempre con el marco Agile como base.</p>
+<p class="es">Nuestro ciclo de testing comienza con el BA, siempre: un QA analiza el negocio a fondo.</p>
+    <p class="en">Our testing cycle starts with the BA, always: a QA looks deeply into the business.</p>
+    <p class="es">Arrancar junto al BA significa orden y l&iacute;neas claras desde el d&iacute;a uno.</p>
+    <p class="en">Starting alongside the BA means order and clear lines from day one.</p>
+    <p class="es">De la US a los casos de prueba hay trazabilidad, y con trazabilidad nadie pierde el hilo.</p>
+    <p class="en">From the user story to the test cases there is traceability, and with traceability nobody loses the thread.</p>
+    <p class="es">El BA cruza datos y los valida con QA, para no tener casos de prueba de m&aacute;s ni de menos.</p>
+    <p class="en">The BA cross-checks data and validates it with QA, so we don&rsquo;t end up with too many or too few test cases.</p>
+    <p class="es">Ac&aacute; hay dos cosas que importan:</p>
+    <p class="en">Two things matter here:</p>
+    <ul>
+      <li><span class="es"><strong>El BA</strong> arma su agente desde su visi&oacute;n de negocio: m&eacute;tricas y requerimientos a cubrir.</span><span class="en"><strong>The BA</strong> builds its agent from its business vision: metrics and requirements to cover.</span></li>
+      <li><span class="es"><strong>QA</strong> tiene sus propios procesos, definidos por sus propios agentes.</span><span class="en"><strong>QA</strong> has its own processes, defined by its own agents.</span></li>
+    </ul>
+    <p class="es">Va a haber discrepancias &mdash; y est&aacute; bien. Lo que no puede pasar es seguir sin resolverlas: esa brecha es donde se define la calidad.</p>
+    <p class="en">There will be discrepancies &mdash; and that&rsquo;s fine. What can&rsquo;t happen is moving on without resolving them: that gap is where quality is defined.</p>
+    <p class="es">Despu&eacute;s de eso, se validan las ejecuciones y QA selecciona qu&eacute; casos de prueba se automatizan.</p>
+    <p class="en">After that, the executions are validated and QA selects which test cases get automated.</p>
+        <p class="es">Las etapas se validan seg&uacute;n lo que requiera el cliente: Scrum o Kanban, siempre con el marco Agile como base.</p>
     <p class="en">Stages are validated according to what the client needs: Scrum or Kanban, always with the Agile framework as the base.</p>
     <div class="hash"><span class="es">#Agile #Scrum #Kanban #IA #Testing</span><span class="en">#Agile #Scrum #Kanban #AI #Testing</span></div>
   </section>
 
-  <!-- Cap 6 -->
+  <!-- Cap 8 -->
   <section class="chapter" id="cap6">
     <div class="chapter-head">
-      <div class="chapter-label">Cap&iacute;tulo 6 / Chapter 6</div>
+      <div class="chapter-label">Cap&iacute;tulo 8 / Chapter 8</div>
       <h2>
         <span class="es">La seguridad</span>
         <span class="en">Security</span>
@@ -394,13 +501,95 @@
     <p class="en">And permissions are not a switch: they are earned. The agent starts with a small scope and keeps it by doing what it is asked, reporting what it did and not hiding errors. Every rule it breaks, it loses a permission.</p>
     <p class="es">Nuestra l&iacute;nea pr&aacute;ctica: lo que queda dentro del taller es libre; solo lo que sale a producci&oacute;n (publicar, enviar) necesita un s&iacute; de la persona. Ah&iacute; entra el criterio: eso no se delega.</p>
     <p class="en">Our practical line: whatever stays inside the workshop is free; only what goes out to production (publish, send) needs a yes from the person. That is where judgement comes in: that part is not delegated.</p>
+    <div class="quote">
+      <span class="es">La seguridad es una decisi&oacute;n de dise&ntilde;o, no un parche al final.</span>
+      <span class="en">Security is a design decision, not a patch at the end.</span>
+    </div>
     <div class="hash"><span class="es">#Seguridad #IA #AgentesDeIA</span><span class="en">#Security #AI #AIAgents</span></div>
   </section>
 
-  <!-- Cap 7 -->
+  <!-- Cap 9 -->
+  <section class="chapter" id="sdlc">
+    <div class="chapter-head">
+      <div class="chapter-label">Cap&iacute;tulo 9 / Chapter 9</div>
+      <h2>
+        <span class="es">Nuestra &aacute;rea, clave en el SDLC</span>
+        <span class="en">Our area, key in the SDLC</span>
+      </h2>
+    </div>
+    <p class="es">Al construir nosotros mismos, entendimos algo que sospech&aacute;bamos: nuestra &aacute;rea es clave en el SDLC.</p>
+    <p class="en">By building it ourselves, we understood something we suspected: our area is key in the SDLC.</p>
+    <p class="es">Y la IA de hoy, cuando no alucina, falla con errores conocidos.</p>
+    <p class="en">And today&rsquo;s AI, when it doesn&rsquo;t hallucinate, fails with known errors.</p>
+    <p class="es">Tenemos que mirar con atenci&oacute;n los resultados que devuelve: limitados y de calidad dispar.</p>
+    <p class="en">We have to watch the results it gives us: limited, and uneven in quality.</p>
+    <p class="es">Y pasa lo que no deber&iacute;a pasar: se est&aacute;n poniendo en producci&oacute;n productos mal testeados.</p>
+    <p class="en">And the thing that shouldn&rsquo;t happen is happening: badly tested products are being pushed to production.</p>
+    <div class="quote">
+      <span class="es">&laquo;Ese es el espacio del testing: lo que la IA todav&iacute;a no cubre y el negocio no puede saltear.&raquo;</span>
+      <span class="en">&ldquo;That&rsquo;s testing&rsquo;s space: what AI doesn&rsquo;t cover yet, and what the business can&rsquo;t skip.&rdquo;</span>
+    </div>
+    <div class="hash"><span class="es">#Testing #SDLC #Calidad</span><span class="en">#Testing #SDLC #Quality</span></div>
+  </section>
+
+  <!-- Cap 10 -->
+  <section class="chapter" id="analisis">
+    <div class="chapter-head">
+      <div class="chapter-label">Cap&iacute;tulo 10 / Chapter 10</div>
+      <h2>
+        <span class="es">El an&aacute;lisis</span>
+        <span class="en">The analysis</span>
+      </h2>
+    </div>
+    <p class="es">Ac&aacute; es donde llegamos &mdash; y estas son las conclusiones que quiero dejarles:</p>
+    <p class="en">This is where we got to &mdash; and these are the conclusions I want to leave with you:</p>
+    <ul>
+      <li><span class="es">El camino del testing no tiene que ganarse la confianza: esa confianza ya est&aacute; ganada.</span><span class="en">Testing doesn&rsquo;t have to earn trust: that trust is already earned.</span></li>
+      <li><span class="es">Cada profesional, desde su propio perfil, puede crear agentes, armar su ciclo y automatizar.</span><span class="en">Every professional, from their own profile, can build agents, shape their own cycle and automate.</span></li>
+      <li><span class="es">Los perfiles de lead son los que validan el framework.</span><span class="en">Lead profiles are the ones who validate the framework.</span></li>
+      <li><span class="es">Y una m&aacute;s: estamos capacitados para esto. Somos anal&iacute;ticos y cr&iacute;ticos por naturaleza.</span><span class="en">And one more: we are trained for this. We are analytical and critical by nature.</span></li>
+    </ul>
+    <div class="quote">
+      <span class="es">Construir confianza en la era de la IA no es un slogan: es un modelo que ya funciona.</span>
+      <span class="en">Building trust in the AI era isn&rsquo;t a slogan: it&rsquo;s a model that already works.</span>
+    </div>
+    <div class="hash"><span class="es">#Analisis #Testing #Calidad</span><span class="en">#Analysis #Testing #Quality</span></div>
+  </section>
+
+  <!-- Cap 11 -->
+  <section class="chapter" id="conclusiones">
+    <div class="chapter-head">
+      <div class="chapter-label">Cap&iacute;tulo 11 / Chapter 11</div>
+      <h2>
+        <span class="es">Conclusiones</span>
+        <span class="en">Conclusions</span>
+      </h2>
+    </div>
+    <p class="es">La conversaci&oacute;n sobre Inteligencia Artificial suele centrarse en qu&eacute; roles desaparecer&aacute;n. Mi propuesta es diferente: el verdadero desaf&iacute;o no es defender posiciones, sino entender cu&aacute;l es nuestro lugar en esta nueva realidad.</p>
+    <p class="en">The conversation about Artificial Intelligence usually focuses on which roles will disappear. My proposal is different: the real challenge is not defending positions, but understanding our place in this new reality.</p>
+    <p class="es">Durante a&ntilde;os, gran parte del mercado asoci&oacute; a QA y a los equipos de testing con la ejecuci&oacute;n de pruebas. Sin embargo, nuestro valor nunca estuvo &uacute;nicamente en las tareas que realizamos, sino en nuestra capacidad para comprender el negocio, analizar riesgos, cuestionar supuestos y generar confianza sobre la calidad de los productos y servicios.</p>
+    <p class="en">For years, much of the market associated QA and testing teams with running tests. But our value never lay only in the tasks we perform, but in our ability to understand the business, analyse risks, question assumptions and build trust in the quality of products and services.</p>
+    <p class="es">La Inteligencia Artificial puede crear, construir, analizar y escalar soluciones. Nuestros clientes tambi&eacute;n podr&aacute;n hacerlo. Y nosotros, como profesionales de calidad y de negocio, tambi&eacute;n utilizaremos estas capacidades para aportar mayor valor.</p>
+    <p class="en">Artificial Intelligence can create, build, analyse and scale solutions. Our clients will be able to do it too. And we, as quality and business professionals, will also use these capabilities to bring more value.</p>
+    <p class="es">La diferencia no est&aacute; en qui&eacute;n utiliza la IA, sino en c&oacute;mo y para qu&eacute; la utiliza.</p>
+    <p class="en">The difference is not who uses AI, but how and what for.</p>
+    <p class="es">La IA puede generar resultados, pero no puede asumir la responsabilidad de comprender un contexto de negocio, interpretar necesidades humanas o decidir qu&eacute; es correcto para una organizaci&oacute;n. Ese sigue siendo un espacio profundamente humano.</p>
+    <p class="en">AI can generate results, but it cannot take responsibility for understanding a business context, interpreting human needs or deciding what is right for an organisation. That remains a deeply human space.</p>
+    <p class="es">Por eso, no propongo un conflicto entre las personas y la tecnolog&iacute;a, ni dentro del ciclo de desarrollo. Propongo un reposicionamiento profesional.</p>
+    <p class="en">That is why I don&rsquo;t propose a conflict between people and technology, nor inside the development cycle. I propose a professional repositioning.</p>
+    <p class="es">Debemos trabajar con Inteligencia Artificial desde el lugar que siempre nos correspondi&oacute;: como especialistas en calidad, an&aacute;lisis, criterio, gesti&oacute;n del riesgo y generaci&oacute;n de confianza.</p>
+    <p class="en">We should work with Artificial Intelligence from the place that was always ours: as specialists in quality, analysis, judgement, risk management and building trust.</p>
+    <p class="es">El futuro no pertenece a quienes compiten con la Inteligencia Artificial. El futuro pertenece a quienes saben potenciarla con conocimiento, experiencia y pensamiento cr&iacute;tico.</p>
+    <p class="en">The future doesn&rsquo;t belong to those who compete with Artificial Intelligence. The future belongs to those who know how to amplify it with knowledge, experience and critical thinking.</p>
+    <p class="es"><strong>Mensaje final:</strong> la IA no reemplaza el valor de QA. Hace m&aacute;s visible que nunca el verdadero valor que siempre aportamos.</p>
+    <p class="en"><strong>Final message:</strong> AI doesn&rsquo;t replace QA&rsquo;s value. It makes more visible than ever the true value we have always brought.</p>
+    <div class="hash"><span class="es">#IA #QA #Reposicionamiento #Calidad</span><span class="en">#AI #QA #Repositioning #Quality</span></div>
+  </section>
+
+  <!-- Cap 12 -->
   <section class="chapter" id="cap7">
     <div class="chapter-head">
-      <div class="chapter-label">Cap&iacute;tulo 7 / Chapter 7</div>
+      <div class="chapter-label">Cap&iacute;tulo 12 / Chapter 12</div>
       <h2>
         <span class="es">El stack</span>
         <span class="en">The stack</span>
@@ -433,7 +622,6 @@
     </p>
   </div>
 
-</div>
 
 <script>
 function toggleLang() {
